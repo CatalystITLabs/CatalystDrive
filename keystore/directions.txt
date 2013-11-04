@@ -1,0 +1,12 @@
+KEYSTORE INFO:
+
+The keystore in this directory is automatically copied as a resource and moved to the root of the war during a 'maven install' for use
+by the EmbeddedJettyServer ssl deployment.  If you change the name and/or password of the keystore file please change
+the fields in the EmbeddedJettyServer to match those.
+
+
+To generate a new self-signed keystore run:
+keytool -genkey -keyalg RSA -alias selfsigned -keystore PATH/KEYSTORE_NAME -storepass KEYSTORE_PASS -validity 360 -keysize 2048
+
+KEYSTORE_NAME and KEYSTORE_PASS correspond to the fields of the same names in EmbeddedJettyServer.java.  The PATH is the directory 
+where the keystore will be placed by the keytool. 

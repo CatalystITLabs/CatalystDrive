@@ -1,0 +1,21 @@
+Setting up etherpad server
+
+You have 2 options for running your etherpad server.  It can run (1) side by side
+with Jetty or (2) you can start it externally.
+
+1) unzip etherpad.zip into the root folder of your project (it will extract with the
+folder, "etherpad") and then you can use the embedded run configuration, 
+CatalystDrive - Run EmbeddedJettyServer With Etherpad, to start up both servers
+simultaneously.  Check to ensure after unzipping that the folder structure looks like
+/CatalystDrive/etherpad/<files>  and not CatalystDrive/etherpad/etherpad/<files>
+or the run configuration will fail.
+
+            -------------OR--------------
+
+2) unzip etherpad.zip somewhere on your computer.  whenever you want to start it
+just double click start.bat in its root directory.  you can leave this on, of course,
+which could be convenient.
+
+!!!PLEASE NOTE!!!--By default the db being used is on pc20161, however this should be
+changed in the "settings.json" file.  While you are at it, change the persistence.xml
+to also point to your own db.

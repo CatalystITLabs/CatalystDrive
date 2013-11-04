@@ -1,0 +1,13 @@
+Adding Dependencies
+
+Please note that there are 2 profiles of dependencies in this project:
+
+1. Standalone container - "default"
+2. External container - "externalContainer"
+
+When adding dependencies for business logic, please remember to add them
+to both profiles.
+
+As a sidenote, when running a Run As... -> "maven build...", you can type in
+the profile to use in the Profiles text box. Run configurations are already
+made using the different profiles, however, and included with this project.

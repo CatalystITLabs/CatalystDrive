@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="main" template="WEB-INF/layouts/main.jsp">
+		<put-attribute name="title" value="Catalyst Drive Template" />
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/tiles/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+	
+	<!-- Concrete page. To use this page, your controller should return the name "splash" -->
+	<definition name="splash" extends="main">
+		<put-attribute name="body" value="/WEB-INF/pages/splash.jsp" />
+	</definition>
+	
+	<definition name="users" extends="main">
+		<put-attribute name="body" value="/WEB-INF/pages/users.jsp" />
+	</definition>
+	
+	<definition name="standalone" extends="main">
+		<put-attribute name="body" value="/WEB-INF/pages/standalone.jsp" />
+	</definition>
+	
+	<definition name="external" extends="main">
+		<put-attribute name="body" value="/WEB-INF/pages/external.jsp" />
+	</definition>
+	
+	<definition name="document" extends="main">
+		<put-attribute name="body" value="/WEB-INF/pages/document.jsp" />
+	</definition>
+	
+	<definition name="error" extends="main">
+		<put-attribute name="body" value="/WEB-INF/pages/error.jsp" />
+	</definition>
+</tiles-definitions>

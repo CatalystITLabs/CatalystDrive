@@ -1,0 +1,26 @@
+Debug and Deployment
+
+NOTE: You must use a Java 7, jdk 1.7.x with this project! (Windows -> Preferences -> Java -> Installed JRE's)
+
+To debug:  run as -> maven build... -> for goals, type "jetty:run"
+To deploy with standalone jetty server: 
+	1. Go to Run As... -> Maven clean.  If this is a BIRT installation, this will remove temporary 
+	BIRT folders as well as clean the target directory.
+	2. Go to Run -> Run configurations -> run "CatalystTemplate - Create War for Standalone Jetty Server"
+	3. Right click on extract_and_run.bat -> Open with... -> System Editor
+	4. The .war will be extracted to c:\runnable-wars and the server will start up.  NOTE: This will only work 
+	"as is" if your workspace is named "workspace".  If it is not named "workspace", you need to edit the .bat file 
+	to reflect what your workspace is called.
+To make a war for deploying on an external container like Tomcat:
+	1. Go to Run -> Run configurations -> run "CatalystTemplate - Create War for External Container"
+	2. Go to the target directory of the project, refresh the folder and copy the CatalystTemplate.war file
+	to wherever the container needs the war.  E.G. for Tomcat, in the webapp directory of the Tomcat
+	installation.
+ 
+Notes:
+1.  If you wish to use a different keystore, copy it into the keystore directory and change the keystore name and password 
+	in EmbeddedJettyServer accordingly. The included keystore is unsigned.
+
+By default for the standalone server, the path name will be "/CatalystDrive", both non-ssl and ssl will be "true", 
+the port number, "8080", the ssl port number, "8443",  and the host name will be detected by the EmbeddedJettyServer 
+(as your computer name on the network--NOT localhost).

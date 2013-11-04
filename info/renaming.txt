@@ -1,0 +1,26 @@
+Renaming the Project
+
+Altering the name of this application can be done in a few
+easy steps:
+
+1. Right click on the project and rename it.
+2. In the project explorer choose the packages to be displayed
+hierarchically (down arrow, upper right corner).  Right click
+on the top level package and choose refactor -> rename.  Make sure
+to check ALL the boxes in the prompt that appears.  Click OK
+through the screens that follow.  (Do the same for the test
+packages if you wish).
+3. Go to the pom file.  
+	a. Near the top of the file rename GroupId and 
+	ArtifactId. 
+	b. In the properties right below those, rename the 
+	embeddedServerPath property to match the new package name.  
+    c. Scroll down to the Jetty Plugin area and rename the contextPath.  
+4. You may want to change the supplied run configurations also.  To do this, 
+go to Run -> Run Configurations.  Click on each of the 3 run configurations associated
+with this project and change the names as well as path to the project accordingly.
+5. Once you have finished the steps above, PLEASE disassociate it from the 
+CatalystTemplate project on svn.  You can do this by right clicking on the project -> 
+Team -> Disconnect.  This will ensure the project is now disconnected from the
+CatalystTemplate svn location.  At this point you can share it on svn as a new
+project however you wish.

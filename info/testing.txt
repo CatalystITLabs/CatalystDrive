@@ -1,0 +1,13 @@
+Testing in this Application
+
+The testing in this application is done with junit 4 and a separate test-servlet.xml serving as 
+the application context.  This separate testing context defines its own dataSource for any testing
+that needs to interact with a database.  To change that datasource:
+
+1. Go to test-servlet.xml in the WEB-INF/contexts folder.
+2. Find the "id=myDataSource" bean.
+3. Change the url and credentials to use your test database info. 
+
+NOTE:  Keep in mind we have eliminated the need for a persistence.xml in testing, but have kept
+the persistence.xml strategy for the regular application since setting up special properties
+like ones for c3p0 is easier in that form.

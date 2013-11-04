@@ -1,0 +1,1 @@
+<h3>TILE FOR THE FOOTER - <a href="logout.html"> Logout</a></h3>

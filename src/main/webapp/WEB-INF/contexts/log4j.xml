@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC
+  "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<log4j:configuration>
+
+	<appender name="screen_stderr" class="org.apache.log4j.ConsoleAppender">
+		<param name="target" value="System.err" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p [%-7t] %F:%L %x - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="warn" />
+			<param name="LevelMax" value="fatal" />
+			<param name="AcceptOnMatch" value="false" />
+		</filter>
+	</appender>
+	<appender name="screen_stdout" class="org.apache.log4j.ConsoleAppender">
+		<param name="target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p [%-7t] %F:%L %x - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="debug" />
+			<param name="LevelMax" value="info" />
+			<param name="AcceptOnMatch" value="false" />
+		</filter>
+	</appender>
+	<!-- <appender name="detail_log" class="net.model3.log4j.HouseKeepingFileAppender"> 
+		<param name="ArchiveDirectory" value="${logs.archive.dir}"/> <param name="FilenamePrefix" 
+		value="${logs.dir}/kiosk-detail-"/> <param name="FilenameSuffix" value=".log"/> 
+		<param name="DaysToKeep" value="30"/> <layout class="org.apache.log4j.PatternLayout"> 
+		<param name="ConversionPattern" value="%d{HH:mm:ss.SSS} (%6r) %-5p [%-7t] 
+		%F:%L %x - %m%n"/> </layout> </appender> -->
+
+
+	<!--  Appender to house errors in first database-->
+<!-- 	<appender name="jdbc" class="org.apache.log4j.jdbc.JDBCAppender"> -->
+<!-- 		<param name="URL" value="jdbc:mysql://pc30092.catalystsolves.com/injuryreport1" /> -->
+<!-- 		<param name="user" value="admin" /> -->
+<!-- 		<param name="password" value="password" /> -->
+<!-- 		<param name="driver" value="com.mysql.jdbc.Driver" /> -->
+<!-- 		<param name="sql" -->
+<!-- 			value="INSERT INTO Log4jJdbcTable(LogDate, Logger, Priority, Message) VALUES ('%d{yyyy MM dd HH:mm:ss}', '%c', '%p', '%m')" /> -->
+<!-- 		<filter class="org.apache.log4j.varia.LevelRangeFilter"> -->
+<!-- 			<param name="LevelMin" value="error" /> -->
+<!-- 			<param name="LevelMax" value="fatal" /> -->
+<!-- 			<param name="AcceptOnMatch" value="false" />			 -->
+			
+<!-- 		</filter> -->
+<!-- 	</appender> -->
+	
+		<!-- Appender to house  Oracle errors in first database -->
+<!-- 		<appender name="oraclejdbc" class="org.apache.log4j.jdbc.JDBCAppender"> -->
+<!-- 		<param name="URL" -->
+<!-- 			value="jdbc:oracle:thin:@pc10086.catalystsolves.com:1521:CYCLE22012" /> -->
+<!-- 		<param name="user" value="c22012" /> -->
+<!-- 		<param name="password" value="password" /> -->
+<!-- 		<param name="driver" value="oracle.jdbc.OracleDriver" /> -->
+<!-- 		<param name="sql" -->
+<!-- 			value="INSERT INTO Log4jJdbcTable(LogDate, Logger, Priority, Message) VALUES ('%d{yyyy MM dd HH:mm:ss}', '%c', '%p', '%m')" /> -->
+<!-- 			<filter class="org.apache.log4j.varia.LevelRangeFilter"> -->
+<!-- 			<param name="LevelMin" value="error" /> -->
+<!-- 			<param name="LevelMax" value="fatal" /> -->
+<!-- 			<param name="AcceptOnMatch" value="false" /> -->
+<!-- 		</filter> -->
+<!-- 	</appender> -->
+
+<!-- 	<appender name="detail_log" class="org.apache.log4j.RollingFileAppender"> -->
+<!-- 		<param name="File" value="${webapp.root}/WEB-INF/test.log" /> -->
+<!-- 		<param name="MaxFileSize" value="512KB" /> -->
+		<!-- Keep three backup files. -->
+<!-- 		<param name="MaxBackupIndex" value="3" /> -->
+<!-- 		<layout class="org.apache.log4j.PatternLayout"> -->
+<!-- 		</layout> -->
+<!-- 	</appender> -->
+
+	<!-- <logger name="log4j.logger.org.springframework.security"> <level value="warn"/> 
+		</logger> -->
+	
+	<logger name="org.springframework">
+		<level value="Warn" />
+	</logger>
+	
+	<logger name="org.hibernate">
+		<level value="Warn" />
+	</logger>
+	
+	<root>
+<!-- 		<level value="trace" class="net.model3.log4j.LevelX" /> -->
+		<level value="info" />
+		<appender-ref ref="screen_stdout" />
+		<appender-ref ref="screen_stderr" />
+<!-- 		<appender-ref ref="detail_log" /> -->
+<!-- 		<appender-ref ref="jdbc" /> -->
+	</root>
+
+</log4j:configuration>

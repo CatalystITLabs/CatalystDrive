@@ -1,0 +1,21 @@
+Overview (You must use a Java 7, jdk 1.7.x with this project):
+
+This project is a "template" utilizing Spring-MVC with Hibernate and Apache Tiles.  It debugs with a jetty-plugin but can be deployed 
+via executable war (i.e. no separate application server necessary). In debug mode it uses regular http, whereas, when it is packaged 
+into a self-deploying war, it can utilize ssl over https as well as non-ssl (regular http).
+
+It implements Spring Security hooked up to ldap (default is set to Catalyst ldap server parameters) with fairly minimal coding. Please note,
+a script to copy the database pointed to in the persistence file is included in the folder /sampledb.  
+
+To run this as is, make sure you are on the Catalyst network.  This is because the project is configured to log into 
+the Catalyst ldap server for authentication while keeping track of users internally with a program specific db (which
+is set up on pc20161).  A sql file to recreate that mysql db elsewhere is in the sampledb folder.
+
+The project is preconfigured with Apache Tiles and is configured to use a separate test-servlet context for testing.
+
+Please note, some classes included in the project are not used by default, but are here to show possible configurations.  
+For example, the class, ActiveDirectoryGrantedAuthoritiesMapper, could be used instead of UserDetailsContextMapperImpl 
+for the log in process if, for security, you knew that roles from the ldap server could be mapped 1:1 to app-specific roles
+and that is all you needed to do.  By default, I am using the UserDetailsContextMapperImpl since that passes you a username--
+which allows you to do more than just mapping roles.
+

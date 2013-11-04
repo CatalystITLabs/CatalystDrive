@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+
+#accountInfo {
+  
+     border-radius: 49px 49px 49px 49px;
+}
+
+.container {
+	border: 2px solid black;
+	margin-top: -2px;
+}
+
+.title {
+	text-align: center;
+}
